@@ -1,33 +1,19 @@
 import streamlit as st
-import joblib
-import pandas as pd
+from predict import predict_yield
 
-model = joblib.load("crop_yield_model.pkl")
+st.title("🌾 Crop Yield Prediction System")
 
-st.title("Crop Yield Prediction")
+st.write("Enter details to predict crop yield")
 
-st.write("Enter the farming conditions to predict crop yield")
-
+# user inputs
 area = st.number_input("Area Code")
 item = st.number_input("Crop Code")
 year = st.number_input("Year", 1990, 2030)
-rainfall = st.number_input("Average Rainfall")
+rainfall = st.number_input("Average Rainfall (mm)")
 pesticides = st.number_input("Pesticides Used")
 temp = st.number_input("Average Temperature")
 
+# prediction button
 if st.button("Predict Yield"):
-
-    data = {
-        "Area":[area],
-        "Item":[item],
-        "Year":[year],
-        "average_rain_fall_mm_per_year":[rainfall],
-        "pesticides_tonnes":[pesticides],
-        "avg_temp":[temp]
-    }
-
-    df = pd.DataFrame(data)
-
-    prediction = model.predict(df)
-
-    st.success(f"Predicted Crop Yield: {prediction[0]:.2f}")
+    result = predict_yield(area, item, year, rainfall, pesticides, temp)
+    st.success(f"Predicted Yield: {result:.2f}")

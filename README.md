@@ -1,33 +1,50 @@
 # 🌾 Crop Yield Prediction
+### Machine Learning + Streamlit Web App
 
-This project predicts crop yield using Machine Learning based on environmental factors.
+This project predicts crop yield based on environmental factors such as rainfall, temperature, and pesticide usage.
+
+---
 
 ## 🚀 Features
-- Predict crop yield using ML model
-- Interactive web app using Streamlit
-- Data analysis and visualization
+- Predict crop yield using a trained machine learning model
+- Simple and interactive web app using Streamlit
+- Clean and structured dataset for analysis
+
+---
 
 ## 🛠️ Tech Stack
 - Python
 - Pandas
 - Scikit-learn
 - Streamlit
+- Joblib
+
+---
+
+## 📊 Model Used
+- Random Forest Regressor
+
+---
+
+## 🔄 Project Workflow
+1. Collected and prepared agricultural data  
+2. Cleaned and selected important features  
+3. Trained a machine learning model  
+4. Saved the model as a `.pkl` file  
+5. Built a Streamlit app for predictions  
+
+---
 
 ## 📷 App Screenshots
 
 ### Input Page
-![Input Screenshot](screenshot1.png)
+![Input](screenshots/screenshot1.png)
 
 ### Prediction Output
-![Output Screenshot](screenshot2.png)
+![Output](screenshots/screenshot2.png)
 
-## ▶️ How to Run
+---
 
-1. Install dependencies:
-pip install -r requirements.txt
+## ▶️ How to Run the Project
 
-2. Run app:
-streamlit run app.py
-
-## 📌 Note
-Model file excluded due to size. Can be generated using main.py.
+1. Clone the repository 
